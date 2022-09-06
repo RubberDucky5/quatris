@@ -1,0 +1,22 @@
+{
+  "name": "quatris",
+  "version": "1.0.0",
+  "description": "Annother Tetris Clone Built With PixiJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://f3dff7b7-f0e0-454b-a32a-e2a23df8f13f@api.glitch.com/git/talented-educated-recorder"
+  },
+  "keywords": [
+    "blockstacker",
+    "pixijs"
+  ],
+  "author": "Jame",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
