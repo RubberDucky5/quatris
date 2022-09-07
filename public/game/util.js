@@ -3,6 +3,7 @@ class Matrix {
     this.size = createVector(width, height);
     this.array = []; //Array(width * height).fill(null);
     this.initialize();
+    this.callbacks = [];
   }
   
   initialize(){
@@ -15,6 +16,7 @@ class Matrix {
       return true;
     }
     return false;
+    this.callUpdate();
   }
   
   toArrayIndex(x, y){
@@ -31,6 +33,7 @@ class Matrix {
     let i = this.toArrayIndex(x, y);
     
     this.array[i] = c;
+    this.callUpdate();
   }
   
   rotate(a){
@@ -58,6 +61,7 @@ class Matrix {
     }
     
     this.array = tempMatrix.array;
+    this.callUpdate();
   }
   
   getAt(x, y ){
@@ -77,6 +81,7 @@ class Matrix {
     else{
       console.error('Array needs to be same length');
     }
+    this.callUpdate();
   }
   
   loopThrough(func){
@@ -94,6 +99,16 @@ class Matrix {
   getMiddle(){
     return createVector(Math.floor(this.size.x / 2), Math.floor(this.size.y / 2));
   }
+  
+  callUpdate(){
+    for(let f of this.callbacks){
+      f();
+    }
+  }
+  
+  addCallback(func){
+    this.callbacks.push(func);
+  }
 }
 
 class Vector {
@@ -102,14 +117,11 @@ class Vector {
     this.y = y;
     this.z = z;
   }
+  copy(){
+    return new Vector(this.x, this.y, this.z);
+  }
 }
 
 function createVector (x = 0, y = 0, z = 0){
   return new Vector(x, y, z);
-}
-
-class Cell {
-  constructor(game){
-    this.game = game;
-  }
 }
