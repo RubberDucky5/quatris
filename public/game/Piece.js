@@ -34,19 +34,6 @@ class TPiece extends S5Piece {
   }
 }
 
-class OPiece extends S5Piece {
-  constructor(){
-    super();
-    this.color = "yellow";
-    this.cells.set([
-      [], [], [], [], [],
-      [], [], [1],[1],[],
-      [], [], [1],[1],[],
-      [], [], [], [], [],
-      [], [], [], [], [],
-    ], true);
-  }
-}
 class IPiece extends S5Piece {
   constructor(){
     super();
@@ -60,6 +47,21 @@ class IPiece extends S5Piece {
     ], true);
   }
 }
+
+class OPiece extends S5Piece {
+  constructor(){
+    super();
+    this.color = "yellow";
+    this.cells.set([
+      [], [], [], [], [],
+      [], [], [1],[1],[],
+      [], [], [1],[1],[],
+      [], [], [], [], [],
+      [], [], [], [], [],
+    ], true);
+  }
+}
+
 class LPiece extends S5Piece {
   constructor(){
     super();
@@ -89,7 +91,7 @@ class JPiece extends S5Piece {
 class SPiece extends S5Piece {
   constructor(){
     super();
-    this.color = "blue";
+    this.color = "green";
     this.cells.set([
       [], [], [], [], [],
       [], [], [1],[1],[],
@@ -102,7 +104,7 @@ class SPiece extends S5Piece {
 class ZPiece extends S5Piece {
   constructor(){
     super();
-    this.color = "blue";
+    this.color = "red";
     this.cells.set([
       [], [], [], [], [],
       [], [1],[1],[], [],
