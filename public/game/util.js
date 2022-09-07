@@ -1,9 +1,9 @@
 class Matrix {
   constructor(width = 1, height = 1){
+    this.callbacks = [];
     this.size = createVector(width, height);
     this.array = []; //Array(width * height).fill(null);
     this.initialize();
-    this.callbacks = [];
   }
   
   initialize(){
@@ -13,10 +13,11 @@ class Matrix {
       }
     }
     if(this.array.length == this.size.x * this.size.y){
+      this.callUpdate();
       return true;
     }
-    return false;
     this.callUpdate();
+    return false;
   }
   
   toArrayIndex(x, y){
