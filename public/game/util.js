@@ -1,7 +1,7 @@
 class Matrix {
   constructor(width = 1, height = 1){
     this.size = createVector(width, height);
-    this.array = [];
+    this.array = []; //Array(width * height).fill(null);
     this.initialize();
   }
   
@@ -106,4 +106,10 @@ class Vector {
 
 function createVector (x = 0, y = 0, z = 0){
   return new Vector(x, y, z);
+}
+
+class Cell {
+  constructor(game){
+    this.game = game;
+  }
 }
